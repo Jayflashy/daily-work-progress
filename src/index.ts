@@ -18,7 +18,7 @@ app.get("/", (req: Request, res: Response) => {
 });
 
 // integration routes
-app.use("/integration", integrationRoutes);
+app.use(integrationRoutes);
 
 // 404 error
 app.use((req: Request, res: Response, next: NextFunction) => {
