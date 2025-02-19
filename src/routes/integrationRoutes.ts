@@ -7,6 +7,6 @@ const router = Router();
 router.get("/integration.json", getIntegrationFile);
 
 // Route to handle interval ticks from Telex
-router.post("/telex-tick", handleTelexTick);
+router.post("/tick", handleTelexTick);
 
 export default router;
