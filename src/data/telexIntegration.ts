@@ -26,7 +26,7 @@ export const telexIntegration = {
         label: "interval",
         type: "text",
         required: true,
-        default: "0 17 * * 1-5", // 5 PM on weekdays
+        default: "* * * * *", // 5 PM on weekdays
         description: "When to send reminders (crontab format)",
       },
       {
