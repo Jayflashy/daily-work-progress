@@ -45,7 +45,6 @@ export const telexIntegration = {
         description: "Channel ID to send the reminder to",
       },
     ],
-    tick_url: appUrl + "/telex-tick",
-    target_url: appUrl + "/webhook",
+    tick_url: appUrl + "/telex-tick"
   },
 };
