@@ -46,6 +46,6 @@ export const telexIntegration = {
       },
     ],
     tick_url: appUrl + "/tick",
-    target_url: appUrl + "/tick"
+    target_url: appUrl + "/webhook"
   },
 };

@@ -23,3 +23,11 @@ export const handleTelexTick = async (req: Request, res: Response) => {
     message: "Tick received",
   });
 };
+
+export const handleTelexWebhook = async (req: Request, res: Response) => {
+  console.log(req.body);
+  res.json({
+    status: "success",
+    message: "Webhook received",
+  });
+};
