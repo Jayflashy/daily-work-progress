@@ -1,5 +1,8 @@
 import { toChannel } from "./telexService";
-import { ReminderMessage, ReminderMessages, TelexPayload, NotifyWebhookPayload } from "../types";
+import {
+  TelexPayload,
+  NotifyWebhookPayload,
+} from "../types";
 import messageList from "../data/reminderMessages.json";
 import axios from "axios";
 
@@ -35,7 +38,9 @@ export async function sendReminder(payload: TelexPayload): Promise<void> {
       status: status,
     };
     const currentDate = new Date();
-    const currentDay = currentDate.toLocaleDateString('en-US', { weekday: 'long' });
+    const currentDay = currentDate.toLocaleDateString("en-US", {
+      weekday: "long",
+    });
     // only send if the current day is in the work days array
     const isWorkDay = workDays.includes(currentDay);
     if (isWorkDay) {
@@ -54,8 +59,9 @@ export async function sendReminder(payload: TelexPayload): Promise<void> {
         await sendWebhook(webhookData, notifyWebhook);
       }
       console.log("Reminder sent to channel:", channelId);
+    } else {
+      console.log("Reminder not sent to channel: Not a work day", channelId);
     }
-    console.log("Reminder not sent to channel: Not a work day", channelId);
   } catch (error) {
     console.error("Error sending reminder:", error);
     throw error;
@@ -63,15 +69,15 @@ export async function sendReminder(payload: TelexPayload): Promise<void> {
 }
 // get a random message from the message list
 const getRandomMessage = (tone: string): string => {
-  const messages = (messageList as ReminderMessages).messages;
-  const filteredMessages = messages.filter(
-    (message: ReminderMessage) => message.tone === tone
-  );
-  const randomIndex = Math.floor(Math.random() * filteredMessages.length);
-  return filteredMessages[randomIndex].message;
+  const messages = messageList[tone as keyof typeof messageList];
+  const randomIndex = Math.floor(Math.random() * messages.length);
+  return messages[randomIndex].message;
 };
 // send a webhook
-const sendWebhook = async (payload: NotifyWebhookPayload, webhookUrl: string) => {
+const sendWebhook = async (
+  payload: NotifyWebhookPayload,
+  webhookUrl: string
+) => {
   try {
     await axios.post(webhookUrl, payload);
   } catch (error) {

@@ -13,12 +13,14 @@ export interface Setting {
 
 
 export interface ReminderMessage {
-  tone: string;
+  id: number;
   message: string;
 }
 
-export interface ReminderMessages {
-  messages: ReminderMessage[];
+export interface ReminderMessageCollection   {
+  casual: ReminderMessage[];
+  standard: ReminderMessage[];
+  formal: ReminderMessage[];
 }
 
 export interface NotifyWebhookPayload {

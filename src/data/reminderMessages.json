@@ -1,20 +1,188 @@
 {
-  "messages": [
+  "standard": [
     {
-      "message": "Hey team! Please share your work progress and ensure your code is pushed.",
-      "tone": "standard"
+      "id": 1,
+      "message": "Team update time. Please share your progress and make sure your code is committed."
     },
     {
-      "message": "Hey team! Stabdard message 2.",
-      "tone": "standard"
+      "id": 2,
+      "message": "Daily check-in: What are you working on? Any blockers? Remember to push your latest changes."
     },
     {
-      "message": "Good morning team! Please share your work progress and ensure your code is pushed.",
-      "tone": "formal"
+      "id": 3,
+      "message": "Project update needed: Please share your current status and ensure your code is up to date in the repository."
     },
     {
-      "message": "Hey team! Please share your work progress and ensure your code is pushed.",
-      "tone": "casual"
+      "id": 4,
+      "message": "Reminder: Please provide your work status and confirm your code has been pushed to the shared repository."
+    },
+    {
+      "id": 5,
+      "message": "🚀 Good day team! Time for a quick check-in:\n- What's done?\n- What's next?\n- Any challenges?\n\nLet's stay on track! 🎯"
+    },
+    {
+      "id": 6,
+      "message": " Time to sync up!\nDrop a quick update on:\n- What's done\n- What's pending\n- What's blocking\n\nLet's collaborate and move forward!"
+    },
+    {
+      "id": 7,
+      "message": "⚙️ Status update request:\n- What progress have you made?\n- What's coming up?\n- Any support needed?\n\nKeep pushing forward! 🚀"
+    },
+    {
+      "id": 8,
+      "message": "Daily report time: Current tasks, completed items, and blockers. Make sure your code is pushed."
+    },
+    {
+      "id": 9,
+      "message": "Work update required: Please share progress on your tasks and confirm your code is committed."
+    },
+    {
+      "id": 10,
+      "message": "Hello everyone, time for your updates! Please include:\n- What you’ve worked on today\n- What comes next\n- Any blockers\n\nAnd remember to commit your code!"
+    },
+    {
+      "id": 11,
+      "message": "🔍 Hey everyone! Time to check in:\n- What's been completed?\n- What's in progress?\n- Where do you need help?\n\nLet's stay productive! 💼"
+    },
+    {
+      "id": 12,
+      "message": "📢 Team update time!\nPlease share:\n- Your progress\n- What you'll work on next\n- Any blockers?\n\nKeep up the great work!"
+    },
+    {
+      "id": 13,
+      "message": "📊 Progress report time! Drop your updates:\n- Completed tasks\n- Upcoming priorities\n- Roadblocks to clear\n\nLet's keep moving forward!"
+    },
+    {
+      "id": 14,
+      "message": "⏰ Update Time!\n\nLet's hear about:\n- Your progress today\n- Plans for tomorrow\n- Any help needed?\n\nKeep that code flowing!"
+    },
+    {
+      "id": 15,
+      "message": "📋 Team Updates:\n- What you worked on today\n- What’s next\n- Any challenges?\n\nRemember to commit your changes!"
+    }
+  ],
+  "formal": [
+    {
+      "id": 1,
+      "message": "Good day. I kindly request that all team members provide their work progress updates and ensure their code has been properly committed to the repository."
+    },
+    {
+      "id": 2,
+      "message": "Dear team members, please submit your current project status and confirm that all code changes have been properly submitted to version control."
+    },
+    {
+      "id": 3,
+      "message": "Dear team, please provide your daily update, including:\n- What has been completed\n- What tasks you will focus on next\n- Any challenges encountered\n\nDon't forget to push your code."
+    },
+    {
+      "id": 4,
+      "message": "Good day team, kindly submit your progress updates:\n- Completed tasks\n- Next steps\n- Any obstacles\n\nPlease ensure your code has been pushed."
+    },
+    {
+      "id": 5,
+      "message": "Hello team, please take a moment to provide your updates:\n- Progress made\n- Upcoming tasks\n- Any blockers or concerns\n\nEnsure your code is pushed to the repository."
+    },
+    {
+      "id": 6,
+      "message": "Good day, team. Kindly share your progress updates as follows:\n- Tasks completed\n- Upcoming focus areas\n- Challenges encountered\n\nPlease make sure your code is committed."
+    },
+    {
+      "id": 7,
+      "message": "Dear colleagues, please share your daily work updates:\n- What has been accomplished\n- What you will work on next\n- Any blockers or issues\n\nAlso, ensure that your code is pushed to the repository."
+    },
+    {
+      "id": 8,
+      "message": "For our records, please provide a detailed account of your current progress and ensure all code modifications have been properly submitted to version control."
+    },
+    {
+      "id": 9,
+      "message": "Team members: Please submit formal documentation of your current task status and confirm all code changes have been properly integrated into the repository."
+    },
+    {
+      "id": 10,
+      "message": "As per our established protocol, please provide your work status updates and ensure your code has been properly committed to the central repository."
+    },
+    {
+      "id": 11,
+      "message": "Hello team! Please provide your progress updates and ensure that your code is pushed to the repository."
+    },
+    {
+      "id": 12,
+      "message": "Greetings team, kindly share the following details:\n- What tasks you have completed today\n- What tasks are upcoming\n- Any obstacles or blockers\n\nEnsure that your code is committed."
+    },
+    {
+      "id": 13,
+      "message": "💼 Good day,\nPlease take a moment to submit your daily progress update. Include completed work, pending tasks, and any concerns requiring attention.\n\nThank you."
+    },
+    {
+      "id": 14,
+      "message": "Good day team. Kindly share:\n- Your progress today\n- Plans for tomorrow\n- Any issues encountered\n\nEnsure your code is committed to the repository."
+    },
+    {
+      "id": 15,
+      "message": "📊 Hello team,\nA structured progress update is requested. Kindly share:\n- Your achievements today\n- Your immediate next steps\n- Any obstacles\n\nLet's ensure alignment."
+    }
+  ],
+  "casual": [
+    {
+      "id": 1,
+      "message": "🔔 Hey gang! What's everyone up to? Don't forget to push your code! 🚀"
+    },
+    {
+      "id": 2,
+      "message": "👋 Team check-in time! What are you crushing today? BTW, make sure your code's pushed! 💻"
+    },
+    {
+      "id": 3,
+      "message": "⏰ Quick update, folks! How's it going? Any cool progress to share? Remember to push that code! ✨"
+    },
+    {
+      "id": 4,
+      "message": "💬 Hey team! Let's hear what you're up to! And don't forget to push your awesome code! 🙌"
+    },
+    {
+      "id": 5,
+      "message": "🚀 Progress check, peeps! What's cooking? Any roadblocks? Push that code when you're done! 👍"
+    },
+    {
+      "id": 6,
+      "message": "📅 Time for those quick updates!\nDrop in:\n- What you've wrapped up\n- What's on deck\n- Any blockers?\n\nCode commits are your friend! 💻"
+    },
+    {
+      "id": 7,
+      "message": "🌟 Hey all! How's your day going? What are you working on? Push that code before you log off! 💪"
+    },
+    {
+      "id": 8,
+      "message": "🚀 Alright team, update time! Here's what we need:\n- Wins so far?\n- What's next on your list?\n- Anything slowing you down?\n\nAnd push that code! 📂"
+    },
+    {
+      "id": 9,
+      "message": "⚙️ Hey folks, quick updates please!\n- What's completed?\n- What's next in the pipeline?\n- Blockers?\n\nPush those changes and keep moving! 💾"
+    },
+    {
+      "id": 10,
+      "message": "⚡ Quick update sesh! What's everyone been up to?\n- What's done?\n- What's next?\n- Any hiccups?\n\nDon't forget to push! 🛠️"
+    },
+    {
+      "id": 11,
+      "message": "🛠️ Heads up, time to check in! Let us know:\n- What you've finished\n- What's coming up\n- Any issues?\n\nAnd hey, don't forget to push! 🚀"
+    },
+    {
+      "id": 12,
+      "message": "📌 Hey team! Let's get updates:\n- What did you do today?\n- What's on your plate tomorrow?\n- Any challenges?\n\nPush your code, please!"
+    },
+    {
+      "id": 13,
+      "message": "🔄 Hey everyone! Quick check-in:\n- What did you finish today?\n- What's next?\n- Need any help?\n\nDon't forget to push your code!"
+    },
+    {
+      "id": 14,
+      "message": "👋 Yo team, what's up?\n- What'd you finish?\n- What's next?\n- Anything in the way?\n\nAnd hey, don't forget to push your stuff! 💾"
+    },
+    {
+      "id": 15,
+      "message": "👀 Update check-in!\nLet us know:\n- What you've done so far\n- What's coming up\n- Any roadblocks?\n\nAnd remember to hit that 'push' button! 🚀"
     }
   ]
 }
