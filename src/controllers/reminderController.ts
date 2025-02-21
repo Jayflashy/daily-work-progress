@@ -8,9 +8,14 @@ export const getIntegrationFile = (req: Request, res: Response) => {
 };
 
 export const handleTelexTick = async (req: Request, res: Response) => {
-//   console.log(req.body);
+  // console.log(req.body);
   // process the request from telex
   const payload: TelexPayload = req.body;
+  // quickly send a response to telex
+  res.json({
+    status: "success",
+    message: "Tick received",
+  });
   
   try {
     await sendReminder(payload);
@@ -18,12 +23,9 @@ export const handleTelexTick = async (req: Request, res: Response) => {
     console.error("Error sending reminder:", error);
   }
 
-  res.json({
-    status: "success",
-    message: "Tick received",
-  });
 };
 
+// handle the webhook from telex
 export const handleTelexWebhook = async (req: Request, res: Response) => {
   console.log(req.body);
   res.json({

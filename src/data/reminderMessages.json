@@ -1,0 +1,20 @@
+{
+  "messages": [
+    {
+      "message": "Hey team! Please share your work progress and ensure your code is pushed.",
+      "tone": "standard"
+    },
+    {
+      "message": "Hey team! Stabdard message 2.",
+      "tone": "standard"
+    },
+    {
+      "message": "Good morning team! Please share your work progress and ensure your code is pushed.",
+      "tone": "formal"
+    },
+    {
+      "message": "Hey team! Please share your work progress and ensure your code is pushed.",
+      "tone": "casual"
+    }
+  ]
+}

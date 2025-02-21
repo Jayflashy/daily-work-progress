@@ -10,3 +10,21 @@ export interface Setting {
   default: string;
   required: boolean;
 }
+
+
+export interface ReminderMessage {
+  tone: string;
+  message: string;
+}
+
+export interface ReminderMessages {
+  messages: ReminderMessage[];
+}
+
+export interface NotifyWebhookPayload {
+  message: string;
+  username: string;
+  status: string;
+  event_name: string;
+  timestamp: string;
+}
