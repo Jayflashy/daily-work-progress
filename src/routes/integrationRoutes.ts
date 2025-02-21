@@ -1,5 +1,9 @@
 import { Router } from "express";
-import { getIntegrationFile, handleTelexTick, handleTelexWebhook } from "../controllers/reminderController";
+import {
+  getIntegrationFile,
+  handleTelexTick,
+  handleTelexWebhook,
+} from "../controllers/reminderController";
 
 const router = Router();
 
