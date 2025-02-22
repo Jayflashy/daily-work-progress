@@ -7,8 +7,21 @@ A Telex integration that sends scheduled reminders to team members to submit the
 - Scheduled work progress reminders
 - Customizable reminder messages
 - Configurable reminder intervals
-- Random or custom message templates
+- Random or custom message templates 
+- Handles work day configurations
+- Webhook notifications
+- Channel message delivery
   
+## 📸 Screenshots
+
+### Channel Message
+![Channel Message](./public/images/channel-messages.png)
+### Test Results    
+![Test Results](./public/images/test-results.png)
+### Webhook Notification
+![Webhook Notification](./public/images/webhook-notifications.png)
+
+
 
 ## 📋 Prerequisites
 
@@ -16,6 +29,12 @@ A Telex integration that sends scheduled reminders to team members to submit the
 - npm or yarn
 - A Telex account
 - Environment variables setup
+
+
+## 🔗 Important Links
+- Repository: `[https://github.com/jayflashy/daily-work-progress]`
+- JSON Config: `[https://daily-work-progress.onrender.com/integration.json]`
+- Deployment: `[https://daily-work-progress.onrender.com]`
 
 ## 🛠️ Installation
 
@@ -91,31 +110,60 @@ Receives scheduled triggers from Telex and sends reminders.
 
 ## 🧪 Testing
 
-1. Run tests:
+### Running Tests
 ```bash
+# Run all tests
 npm test
+
+# Run tests in watch mode
+npm run test:watch
+
+# Generate test coverage report
+npm run test:coverage
 ```
 
-2. Test the integration locally:
-```bash
-# Start the server
-npm run dev
+### Test Structure
+- `__tests__/reminderService.test.ts`: Tests for reminder functionality
+  - Random message generation
+  - Custom message handling
+  - Work day validation
+  - Webhook notifications
+  - Channel message delivery
 
-# Send a test request
-curl --location 'http://localhost:3000/tick' \
---header 'Content-Type: application/json' \
---data '{
-    "channel_id": "test_channel",
-    "return_url": "https://webhook.site/your-test-id",
-    "settings": [
-        {
-            "label": "interval",
-            "type": "text",
-            "required": true,
-            "default": "* * * * *"
-        }
+### Test Coverage
+- Service layer tests
+- Message generation
+- Integration with Telex
+- Webhook notifications
+- Error handling
+
+### Writing Tests
+Example test case:
+```typescript
+it("should send custom message when provided", async () => {
+  const customPayload = {
+    channel_id: "test-channel-id",
+    settings: [
+      {
+        label: "message style",
+        default: "custom",
+        type: "dropdown"
+      },
+      {
+        label: "reminder message",
+        default: "Custom message"
+      }
     ]
-}'
+  };
+
+  await sendReminder(customPayload);
+  expect(toChannel).toHaveBeenCalledWith(
+    "test-channel-id", 
+    expect.objectContaining({
+      message: "Custom message"
+    })
+  );
+});
 ```
 
 ## 📦 Deployment
@@ -142,7 +190,7 @@ Common issues and solutions:
 
 1. **Reminder not sending**
    - Check if the interval setting is correct
-   - Verify the return_url is accessible
+   - Verify the tick_url is accessible
    - Check server logs for errors
 
 2. **Wrong message format**
