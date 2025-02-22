@@ -6,9 +6,11 @@ export interface TelexPayload {
 
 export interface Setting {
   label: string;
-  value: string;
-  default: string;
+  default: any;
   required: boolean;
+  type: string;
+  description: string;
+  options?: string[];
 }
 
 

@@ -16,7 +16,7 @@ export async function sendReminder(payload: TelexPayload): Promise<void> {
     };
     const channelId = payload.channel_id;
     // Get configurations from settings
-    const messageStyle = getSettingValue("message_style") || "random";
+    const messageStyle = getSettingValue("message style") || "random";
 
     const reminderMessage = getSettingValue("reminder message");
     const username = getSettingValue("username");
@@ -26,10 +26,8 @@ export async function sendReminder(payload: TelexPayload): Promise<void> {
     const notifyStatus = getSettingValue("notify status");
     const notifyWebhook = getSettingValue("notify webhook");
     const workDays = getSettingValue("work days");
-    const message =
-      messageStyle === "random"
-        ? getRandomMessage(messageTone)
-        : reminderMessage;
+    // if message style is custom, use the reminder message else use the random message
+    const message =  messageStyle == "custom" ? reminderMessage : getRandomMessage(messageTone);
 
     const reminderData = {
       message: message,
@@ -60,7 +58,19 @@ export async function sendReminder(payload: TelexPayload): Promise<void> {
       }
       console.log("Reminder sent to channel:", channelId);
     } else {
+      if (notifyStatus && notifyWebhook) {
+        const webhookData = {
+          message: "Reminder not sent to channel: Not a work day",
+          username: "Webhook Bot",
+          status: "failed",
+          event_name: "reminderNotSent",
+          work_day: currentDay,
+          timestamp: new Date().toISOString(),
+        };
+        await sendWebhook(webhookData, notifyWebhook);
+      }
       console.log("Reminder not sent to channel: Not a work day", channelId);
+      return;
     }
   } catch (error) {
     console.error("Error sending reminder:", error);
@@ -68,7 +78,7 @@ export async function sendReminder(payload: TelexPayload): Promise<void> {
   }
 }
 // get a random message from the message list
-const getRandomMessage = (tone: string): string => {
+export const getRandomMessage = (tone: string): string => {
   const messages = messageList[tone as keyof typeof messageList];
   const randomIndex = Math.floor(Math.random() * messages.length);
   return messages[randomIndex].message;
