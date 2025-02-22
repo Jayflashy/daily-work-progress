@@ -212,7 +212,7 @@ src/
 ### Adding New Features
 
 1. Update the schema in `src/data/telexIntegration.ts`
-2. Add new message templates in `src/data/messageTemplates.json`
+2. Add new message templates in `src/data/reminderMessages.json`
 3. Update types in `src/types/index.ts`
 4. Test the changes
 
@@ -230,7 +230,7 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 
 ## 👥 Authors
 
-- Your Name - Initial work
+- Joshua Adeyemi - Initial work
 
 ## 🙏 Acknowledgments
 
