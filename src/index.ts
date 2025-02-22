@@ -24,12 +24,8 @@ app.use(integrationRoutes);
 app.use((req: Request, res: Response, next: NextFunction) => {
   res.status(404).json({
     status: "error",
-    message: "Endpoint not found. ",
+    message: "Endpoint not found.",
   });
 });
 
-// Start the server
-const PORT = process.env.PORT || 2026;
-app.listen(PORT, () => {
-  console.log(`Server is live on http://localhost:${PORT}`);
-});
+export default app;
